@@ -1,6 +1,26 @@
     #include <LiquidCrystal_I2C.h>
 
     #include <Wire.h>
+
+
+       //------------------------------------------------
+
+        //This program includes an excerpt of a song played
+        //by the buzzer at the start of the program, which 
+        //was modified from the original version created by the
+        //Github user xitanggg, the following is the link to his code
+        //https://github.com/xitanggg/-Pirates-of-the-Caribbean-Theme-Song/blob/master/Pirates_of_the_Caribbean_-_Theme_Song.ino
+
+
+
+
+
+       //------------------------------------------------
+
+
+
+
+
     
     //initialize the liquid crystal library
     //the first parameter is the I2C address
