@@ -27,7 +27,7 @@
     //the second parameter is how many rows are on your screen
     //the third parameter is how many columns are on your screen
     LiquidCrystal_I2C lcd(0x27, 16, 2);
-    const int buzzer = 3;
+    const int buzzer = 11;
     const int ledR = 2;
     // Change to 0.5 for a slower version of the song, 1.25 for a faster version
     const float songSpeed = 1.0;
