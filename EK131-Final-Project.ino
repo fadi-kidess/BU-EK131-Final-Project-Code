@@ -142,6 +142,26 @@
     }
     lcd.clear();
     }
+
+    void Alarm(){
+        if(freq<988 && up){
+        freq += 30;
+      }else if(freq>988 && up){
+        up = false;
+      }else if(!up && freq>350){
+        freq -= 30;
+      }else if(freq<350){
+        up = true;
+      }
+      if(freq>700){
+        digitalWrite(ledR, HIGH);
+      }else{
+        digitalWrite(ledR, LOW);
+      }
+      tone(buzzer,freq);
+      
+        
+    }
      
     void loop() // run over and over again
     {
@@ -167,31 +187,13 @@
      lcd.setCursor(0,1);
      lcd.print("Fahrenheit:");
      lcd.print(temperatureF);
-  // tell the screen to write on the bottom row
   lcd.setCursor(0,1);
      if(temperatureC>24 || temperatureC < 18){
-      if(freq<988 && up){
-        freq += 30;
-      }else if(freq>988 && up){
-        up = false;
-      }else if(!up && freq>350){
-        freq -= 30;
-      }else if(freq<350){
-        up = true;
-      }
-      if(freq>700){
-        digitalWrite(ledR, HIGH);
-      }else{
-        digitalWrite(ledR, LOW);
-      }
-      tone(buzzer,freq);
-      
+         Alarm();
      }else{
       noTone(buzzer);
       digitalWrite(ledR, LOW);
      }
-     // now convert to Fahrenheit
      
-     
-     delay(50); //waiting a second
+     delay(50);
     }
